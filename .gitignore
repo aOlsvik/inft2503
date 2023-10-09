@@ -1,1 +1,23 @@
-*.idea/
+# Compiled files
+*.o
+*.out
+*.app
+*.exe
+*.tgz
+
+# Dependency files
+CMakeLists.txt.user
+CMakeFiles/
+cmake_install.cmake
+CMakeCache.txt
+compile_commands.json
+.idea/
+
+# Temporary files
+*.swp
+*~
+
+# Build output directories
+build/
+bin/
+lib/
