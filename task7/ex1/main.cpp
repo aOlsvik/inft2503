@@ -48,4 +48,8 @@ int main() {
         b -= a;
     print("b = ", b);
 
+    Fraction fraction1(1, 2);
+    print("fraction1 = ", fraction1);
+    print("fraction1 - 5 = ", fraction1-5);
+    print("5 - fraction1 = ", 5-fraction1);
 }
