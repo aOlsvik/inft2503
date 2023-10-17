@@ -1,0 +1,31 @@
+I oppgave a) og b) skal du jobbe videre med klassen Fraction fra leksjonen.
+
+a) Lag funksjoner slik at vi kan skrive fraction1 – 5 og 5 – fraction1. Utvid main.cpp slik at du får prøvd dette. Hint: Den ene funksjonen kan ikke være en medlemsfunksjon.
+
+b) Teori: Forklar hvordan 5 - 3 - fraction1 - 7 - fraction2 blir tolket. Hvilke versjoner av operatoren - blir brukt?
+
+Oppgave b:
+
+5 - 3 - fraction1 - 7 - fraction2
+
+Minus-operatoren jobber fra venstre mot høyre. Dermed har vi:
+    5-3 = r1
+    r1-fraction1 = r2
+    r2-7 = r3
+    r3-fraction2 = r4 -> endelig resultat
+
+Først ser vi 5-3, som er to vanlige integers som bruker standard minus-operator
+
+Deretter ser vi resultatet, 2, minus fraction1. Her brukes den nye "Fraction operator-(int, Fraction)"
+fra main.cpp. Dette returnerer en Fraction
+
+Dette blir satt minus 7. Dermed brukes Fraction Fraction::operator-(int integer) fra Fraction.cpp.
+Denne returnerer også en ny Fraction
+
+Til slutt tar vi den nye fractionen vår minus en annen fraciton. Da brukes Fraction Fraction::operator-(Fraction &other)
+
+Oppsummert:
+    Standard minusoperator
+    Fraction operator-(int, fraction)
+    Fraction Fraction::operator-(int integer)
+    Fraction Fraction::operator-(Fraction &other)
