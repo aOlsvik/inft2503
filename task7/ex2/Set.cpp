@@ -12,10 +12,24 @@ Set::Set() {
     elements = std::vector<int>();
 }
 
-Set::Set(const std::vector<int> &elements_) : elements(elements_) {}
+Set::Set(const std::vector<int> &elements_) {
+    elements = std::vector<int>();
+    for(auto i = elements_.begin(); i != elements_.end(); i++){
+        if(std::find(elements.begin(), elements.end(), *i) == elements.end()){
+            elements.emplace_back(*i);
+        }
+    }
+}
 
 Set Set::operator+(const Set &other) const {
-    return Set();
+    Set set1(elements);
+
+    for(auto i = other.elements.begin(); i != other.elements.end(); i++){
+        if(std::find(elements.begin(), elements.end(), *i) == elements.end()){
+            set1+=*i;
+        }
+    }
+    return set1;
 }
 
 
